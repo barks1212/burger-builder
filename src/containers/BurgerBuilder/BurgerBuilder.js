@@ -20,7 +20,8 @@ class BurgerBuilder extends React.Component {
       cheese: 0,
       meat: 0
     },
-    totalPrice: 4
+    totalPrice: 4,
+    purchaseable: false
   };
 
   addIngredientHandler = type => {
