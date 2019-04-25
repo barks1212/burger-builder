@@ -22,7 +22,7 @@ class ContactData extends React.Component {
     this.setState({ loading: true });
     const order = {
       ingredients: this.props.ingredients,
-      price: this.props.totalPrice,
+      price: this.props.price,
       customer: {
         name: "Will Barker",
         address: {
@@ -46,6 +46,7 @@ class ContactData extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     let form = (
       <form>
         <input
