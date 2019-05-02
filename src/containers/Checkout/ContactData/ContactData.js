@@ -102,12 +102,6 @@ class ContactData extends React.Component {
             value={formElement.config.value}
           />
         ))}
-        <Input
-          inputtype="input"
-          type="email"
-          name="email"
-          placeholder="Your email"
-        />
         <Button btnType="Success" clicked={this.orderHandler}>
           ORDER
         </Button>
