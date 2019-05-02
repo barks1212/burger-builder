@@ -9,11 +9,57 @@ import classes from "./ContactData.module.css";
 
 class ContactData extends React.Component {
   state = {
-    name: "",
-    email: "",
-    address: {
-      street: "",
-      postCode: ""
+    orderForm: {
+      name: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "Your Name"
+        },
+        value: ""
+      },
+      street: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "Street"
+        },
+        value: ""
+      },
+      postCode: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "Postcode"
+        },
+        value: ""
+      },
+      country: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "Country"
+        },
+        value: ""
+      },
+      email: {
+        elementType: "input",
+        elementConfig: {
+          type: "email",
+          placeholder: "Email"
+        },
+        value: ""
+      },
+      deliveryMethod: {
+        elementType: "select",
+        elementConfig: {
+          options: [
+            { value: "fastest", displayValue: "Fastest" },
+            { value: "cheapest", displayValue: "Cheapest" }
+          ]
+        },
+        value: ""
+      }
     },
     loading: false
   };
@@ -23,17 +69,7 @@ class ContactData extends React.Component {
     this.setState({ loading: true });
     const order = {
       ingredients: this.props.ingredients,
-      price: this.props.price,
-      customer: {
-        name: "Will Barker",
-        address: {
-          street: "Test street 1",
-          postCode: "12345",
-          country: "UK"
-        },
-        email: "test@test.com"
-      },
-      deliveryMethod: "fastest"
+      price: this.props.price
     };
     axios
       .post("/orders.json", order)
@@ -50,12 +86,7 @@ class ContactData extends React.Component {
     console.log(this.props);
     let form = (
       <form>
-        <Input
-          inputtype="input"
-          type="text"
-          name="name"
-          placeholder="Your name"
-        />
+        <Input elementType="..." elementConfig="..." value="..." />
         <Input
           inputtype="input"
           type="email"
