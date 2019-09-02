@@ -98,7 +98,7 @@ class Auth extends React.Component {
             });
         };
 
-        const form = formElementsArray.map(formElement => (
+        let form = formElementsArray.map(formElement => (
             <Input 
                 key={formElement.id}
                 elementType={formElement.config.elementType}
@@ -110,6 +110,10 @@ class Auth extends React.Component {
                 touched={formElement.config.touched}
             />
             ));
+
+            if (this.props.loading) {
+                form = <Spinner />
+            };
 
         return (
             <div className={classes.Auth}>
