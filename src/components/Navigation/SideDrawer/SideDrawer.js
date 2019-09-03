@@ -7,7 +7,7 @@ import Aux from "../../../hoc/Aux/Aux";
 
 import classes from "./SideDrawer.module.css";
 
-const sideDrawer = ({ open, clicked }) => {
+const sideDrawer = ({ open, clicked, isAuth }) => {
   let attachedClasses = [classes.SideDrawer, classes.Close];
   if (open) {
     attachedClasses = [classes.SideDrawer, classes.Open];
@@ -21,7 +21,7 @@ const sideDrawer = ({ open, clicked }) => {
           <Logo />
         </div>
         <nav>
-          <NavigationItems />
+          <NavigationItems isAuthenticated={isAuth}/>
         </nav>
       </div>
     </Aux>
