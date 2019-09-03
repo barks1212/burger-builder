@@ -16,7 +16,7 @@ const sideDrawer = ({ open, clicked, isAuth }) => {
   return (
     <Aux>
       <Backdrop show={open} clicked={clicked} />
-      <div className={attachedClasses.join(" ")}>
+      <div className={attachedClasses.join(" ")} onClick={clicked}>
         <div className={classes.Logo}>
           <Logo />
         </div>
