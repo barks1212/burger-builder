@@ -7,7 +7,7 @@ const initialState = {
     error: null,
     loading: false,
     authRedirectPath: '/'
-}
+};
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
